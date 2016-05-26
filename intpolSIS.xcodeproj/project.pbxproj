@@ -12,6 +12,8 @@
 		3FC944361CF698390052FE8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC944341CF698390052FE8C /* Main.storyboard */; };
 		3FC944381CF698390052FE8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FC944371CF698390052FE8C /* Assets.xcassets */; };
 		3FC9443B1CF698390052FE8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC944391CF698390052FE8C /* LaunchScreen.storyboard */; };
+		3FC944451CF69D380052FE8C /* CustomTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC944441CF69D380052FE8C /* CustomTabbarViewController.swift */; };
+		3FC944471CF6AF250052FE8C /* MenuItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC944461CF6AF250052FE8C /* MenuItemCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		3FC944371CF698390052FE8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FC9443A1CF698390052FE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FC9443C1CF698390052FE8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FC944441CF69D380052FE8C /* CustomTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabbarViewController.swift; sourceTree = "<group>"; };
+		3FC944461CF6AF250052FE8C /* MenuItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				3FC944301CF698390052FE8C /* AppDelegate.swift */,
 				3FC944321CF698390052FE8C /* ViewController.swift */,
 				3FC944341CF698390052FE8C /* Main.storyboard */,
+				3FC944461CF6AF250052FE8C /* MenuItemCollectionViewCell.swift */,
+				3FC944441CF69D380052FE8C /* CustomTabbarViewController.swift */,
 				3FC944371CF698390052FE8C /* Assets.xcassets */,
 				3FC944391CF698390052FE8C /* LaunchScreen.storyboard */,
 				3FC9443C1CF698390052FE8C /* Info.plist */,
@@ -135,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FC944471CF6AF250052FE8C /* MenuItemCollectionViewCell.swift in Sources */,
+				3FC944451CF69D380052FE8C /* CustomTabbarViewController.swift in Sources */,
 				3FC944331CF698390052FE8C /* ViewController.swift in Sources */,
 				3FC944311CF698390052FE8C /* AppDelegate.swift in Sources */,
 			);
