@@ -18,9 +18,10 @@ class ViewController: UIViewController,  UICollectionViewDelegateFlowLayout, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.allowsSelection = true
       
     }
 
@@ -74,6 +75,14 @@ class ViewController: UIViewController,  UICollectionViewDelegateFlowLayout, UIC
         }
         
         flowLayout.invalidateLayout()
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! MenuItemCollectionViewCell
+        cell.backgroundColor = UIColor(red:0.93, green:0.92, blue:0.92, alpha:1.0)
+        print(cell.menuLabel.text)
+        performSegueWithIdentifier("showManuf", sender: self)
+        cell.backgroundColor = UIColor.clearColor()
     }
 
 
