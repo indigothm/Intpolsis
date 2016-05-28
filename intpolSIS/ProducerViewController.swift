@@ -1,29 +1,50 @@
 //
-//  ViewController.swift
+//  ProducerViewController.swift
 //  intpolSIS
 //
-//  Created by Ilia Tikhomirov on 26/05/16.
+//  Created by Ilia Tikhomirov on 28/05/16.
 //  Copyright © 2016 Ilia Tikhomirov. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController,  UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class ProducerViewController: UIViewController,  UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
-    let menuItems = ["Линолиеум", "Ламинат", "Ковры", "ПВХ", "Плинтус ПВХ", "Щетинестые Покрытия", "Придверные коврики", "Другое"]
-    var selectedValue: String?
+    var entry: String?
 
     @IBOutlet weak var collectionView: UICollectionView!
-    let identifier = "cell"
+    var menuItems = ["Линолиеум", "Ламинат", "Ковры", "ПВХ", "Плинтус ПВХ", "Щетинестые Покрытия", "Придверные коврики", "Другое"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        print("ENTRY VALUE")
+        print(entry)
+        
+        switch entry! {
+        case "Линолиеум":
+            print("Линолиеум")
+            menuItems = ["BEAULIEU (БЕЛЬГИЯ)", "IVC (БЕЛЬГИЯ", "JUTEKS (СЛОВЕНИЯ)", "POLYSTYL", "TARKETT"]
+        case "Ламинат":
+            print("Ламинат")
+        case "Ковры":
+            print("Ковры")
+        case "ПВХ":
+            print("Плинтус ПВХ")
+        case "Щетинестые Покрытия":
+            print("Щетинестые Покрытия")
+        case "Придверные коврики":
+            print("Придверные коврики")
+        case "Другое":
+            print("Другое")
+        default:
+            print("ERROR")
+        }
 
+        // Do any additional setup after loading the view.
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.allowsSelection = true
-      
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,23 +52,19 @@ class ViewController: UIViewController,  UICollectionViewDelegateFlowLayout, UIC
         // Dispose of any resources that can be recreated.
     }
     
-    
-     
-     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         let numberOfCell: CGFloat = 2
         let cellWidth = collectionView.bounds.size.width / numberOfCell - 8
         return CGSizeMake(cellWidth, 36)
-    } 
-     
-    
+    }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return menuItems.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -82,20 +99,20 @@ class ViewController: UIViewController,  UICollectionViewDelegateFlowLayout, UIC
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! MenuItemCollectionViewCell
         cell.backgroundColor = UIColor(red:0.93, green:0.92, blue:0.92, alpha:1.0)
         print(cell.menuLabel.text)
-        selectedValue = cell.menuLabel.text
-        performSegueWithIdentifier("showManuf", sender: self)
+        performSegueWithIdentifier("showProducts", sender: self)
         cell.backgroundColor = UIColor.clearColor()
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showManuf" {
-            let controller = segue.destinationViewController as! ProducerViewController
-            
-            controller.entry = selectedValue
-            controller.title = selectedValue!
-        }
-    }
 
+
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
-
